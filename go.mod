@@ -1,4 +1,4 @@
-module github.com/go-webauthn/webauthn
+module github.com/flaviup/webauthn
 
 go 1.20
 
