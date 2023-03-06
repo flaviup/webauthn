@@ -112,8 +112,8 @@ func (k *EC2PublicKeyData) Verify(data []byte, sig []byte) (bool, error) {
 	if err != nil {
 		return false, ErrSigNotProvidedOrInvalid
 	}
-	encodedStrX := hex.EncodeToString(X)
-	encodedStrY := hex.EncodeToString(Y)
+	encodedStrX := hex.EncodeToString(XCoord)
+	encodedStrY := hex.EncodeToString(YCoord)
 	encodedStrData := hex.EncodeToString(data)
 	encodedStrHash := hex.EncodeToString(h.Sum(nil))
 	encodedStrSig := hex.EncodeToString(sig)
