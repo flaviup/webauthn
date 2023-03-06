@@ -12,7 +12,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/mitchellh/mapstructure"
 
-	"github.com/go-webauthn/webauthn/protocol/webauthncose"
+	"github.com/flaviup/webauthn/protocol/webauthncose"
 )
 
 type PublicKeyCredentialParameters struct {

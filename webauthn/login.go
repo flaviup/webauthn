@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/go-webauthn/webauthn/protocol"
+	"github.com/flaviup/webauthn/protocol"
 )
 
 // BEGIN LOGIN

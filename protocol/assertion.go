@@ -8,7 +8,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/go-webauthn/webauthn/protocol/webauthncose"
+	"github.com/flaviup/webauthn/protocol/webauthncose"
 )
 
 // The CredentialAssertionResponse is the raw response returned to the Relying Party from an authenticator when we request a

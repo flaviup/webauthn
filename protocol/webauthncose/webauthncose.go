@@ -15,7 +15,7 @@ import (
 	"github.com/google/go-tpm/tpm2"
 	"golang.org/x/crypto/ed25519"
 
-	"github.com/go-webauthn/webauthn/protocol/webauthncbor"
+	"github.com/flaviup/webauthn/protocol/webauthncbor"
 )
 
 // PublicKeyData The public key portion of a Relying Party-specific credential key pair, generated

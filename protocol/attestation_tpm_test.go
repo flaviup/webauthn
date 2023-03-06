@@ -17,8 +17,8 @@ import (
 	"github.com/google/go-tpm/tpm2"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/go-webauthn/webauthn/protocol/webauthncbor"
-	"github.com/go-webauthn/webauthn/protocol/webauthncose"
+	"github.com/flaviup/webauthn/protocol/webauthncbor"
+	"github.com/flaviup/webauthn/protocol/webauthncose"
 )
 
 func TestTPMAttestationVerificationSuccess(t *testing.T) {

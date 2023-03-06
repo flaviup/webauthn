@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/go-webauthn/webauthn/protocol/webauthncbor"
+	"github.com/flaviup/webauthn/protocol/webauthncbor"
 )
 
 func TestParseCredentialCreationResponse(t *testing.T) {

@@ -3,7 +3,7 @@ package webauthn
 import (
 	"testing"
 
-	"github.com/go-webauthn/webauthn/protocol"
+	"github.com/flaviup/webauthn/protocol"
 )
 
 func TestLogin_FinishLoginFailure(t *testing.T) {
