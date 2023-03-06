@@ -74,10 +74,10 @@ func ParseCredentialCreationResponseBody(body io.Reader) (pcc *ParsedCredentialC
 	return ccr.Parse()
 }
 
-func ParseCredentialCreationResponseString(str string) (pcc *ParsedCredentialCreationData, err error) {
+func ParseCredentialCreationResponseString(str []byte) (pcc *ParsedCredentialCreationData, err error) {
 	var ccr CredentialCreationResponse
 
-	if err = json.Unmarshal(&ccr); err != nil {
+	if err = json.Unmarshal(str, &ccr); err != nil {
 		return nil, ErrBadRequest.WithDetails("Parse error for Registration").WithInfo(err.Error())
 	}
 
