@@ -74,6 +74,16 @@ func ParseCredentialCreationResponseBody(body io.Reader) (pcc *ParsedCredentialC
 	return ccr.Parse()
 }
 
+func ParseCredentialCreationResponseString(str string) (pcc *ParsedCredentialCreationData, err error) {
+	var ccr CredentialCreationResponse
+
+	if err = json.Unmarshal(&ccr); err != nil {
+		return nil, ErrBadRequest.WithDetails("Parse error for Registration").WithInfo(err.Error())
+	}
+
+	return ccr.Parse()
+}
+
 // Parse validates and parses the CredentialCreationResponse into a ParsedCredentialCreationData. This receiver
 // is unlikely to be expressly guaranteed under the versioning policy. Users looking for this guarantee should see
 // ParseCredentialCreationResponseBody instead, and this receiver should only be used if that function is inadequate

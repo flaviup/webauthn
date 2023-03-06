@@ -8,6 +8,7 @@ import (
 	"crypto/x509"
 	"encoding/asn1"
 	"encoding/pem"
+	"encoding/hex"
 	"fmt"
 	"hash"
 	"math/big"
@@ -111,6 +112,18 @@ func (k *EC2PublicKeyData) Verify(data []byte, sig []byte) (bool, error) {
 	if err != nil {
 		return false, ErrSigNotProvidedOrInvalid
 	}
+	encodedStrX := hex.EncodeToString(X)
+	encodedStrY := hex.EncodeToString(Y)
+	encodedStrData := hex.EncodeToString(data)
+	encodedStrHash := hex.EncodeToString(h.Sum(nil))
+	encodedStrSig := hex.EncodeToString(sig)
+	fmt.Printf("XCoord: %s\n", encodedStrX)
+	fmt.Printf("YCoord: %s\n", encodedStrY)
+	fmt.Printf("DATA: %s\n", encodedStrData)
+	fmt.Printf("HASHED DATA: %s\n", encodedStrHash)
+	fmt.Printf("SIG: %s\n", encodedStrSig)
+	fmt.Printf("R: %x\n", e.R)
+	fmt.Printf("S: %x\n", e.S)
 
 	return ecdsa.Verify(pubkey, h.Sum(nil), e.R, e.S), nil
 }
