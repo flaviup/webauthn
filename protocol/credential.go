@@ -1,9 +1,11 @@
 package protocol
 
 import (
+	"fmt"
 	"crypto/sha256"
 	"encoding/base64"
 	"encoding/json"
+	"encoding/hex"
 	"io"
 	"net/http"
 )
@@ -146,8 +148,13 @@ func (pcc *ParsedCredentialCreationData) Verify(storedChallenge string, verifyUs
 		return verifyError
 	}
 
+	fmt.Printf("CDJ: %s\n", string(pcc.Raw.AttestationResponse.ClientDataJSON))
+	fmt.Printf("CDJ DATA: ")
+	fmt.Printf(pcc.Raw.AttestationResponse.ClientDataJSON)
+	fmt.Printf("\n")
 	// Step 7. Compute the hash of response.clientDataJSON using SHA-256.
 	clientDataHash := sha256.Sum256(pcc.Raw.AttestationResponse.ClientDataJSON)
+	fmt.Printf("CDH: %s\n", hex.EncodeToString(clientDataHash[:]))
 
 	// Step 8. Perform CBOR decoding on the attestationObject field of the AuthenticatorAttestationResponse
 	// structure to obtain the attestation statement format fmt, the authenticator data authData, and the
