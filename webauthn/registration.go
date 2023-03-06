@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/go-webauthn/webauthn/protocol"
-	"github.com/go-webauthn/webauthn/protocol/webauthncose"
+	"github.com/flaviup/webauthn/protocol"
+	"github.com/flaviup/webauthn/protocol/webauthncose"
 )
 
 // BEGIN REGISTRATION
